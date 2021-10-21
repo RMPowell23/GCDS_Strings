@@ -37,41 +37,66 @@ def RS_X(string_input, X):
     """
     
 def LC_X(string_input, X):
+    
     """
         Summary and Description of Function:
-    
+
         This function circulates the leftmost characters to the right-hand side of the string by X characters.
-        
+
         Parameters: 
-        
+
         string_input (string): The string inserted by the user.
         X (int): The number of characters circulated in the string.
-        
+
         Returns:
         string_LC (string): The manipulated string done by the LC_X function.
-        
+
         Example:
         LC-2, NOTEBOOK (X = 2, string_input = NOTEBOOK): TEBOOKNO
     """
-    
+
+    string_LC = ""
+
+    LC_one = string_input[:X] # take first X letters of string_input
+
+    LC_two = string_input[X:] # take everything but first X letters of string_input
+
+    string_LC = LC_two + LC_one # move LC_two in front of LC_one (simulating circulation to the left)
+
+
+    return string_LC
+
+
 def RC_X(string_input, X):
+    
     """
         Summary and Description of Function:
-    
+
         This function circulates the rightmost characters to the left-hand side of the string by X characters.
-        
-        Parameters: 
-        
+
+        Parameters:
+
         string_input (string): The string inserted by the user.
         X (int): The number of characters circulated in the string.
-        
+
         Returns:
         string_RC (string): The manipulated string done by the RC_X function.
-        
+
         Example:
         RC-5, WHITEBOARD (X = 5, string_input = BLACKBOARD): BOARDBLACK
     """
-    
+
+    string_RC = ""
+
+    RC_one = string_input[-X:] # take the last X letters of string_input
+
+    RC_two = string_input[:-X] # take everything but the last X letters of string_input
+
+    string_RC = RC_one + RC_two # move RC_one (the last X letters) in front of RC_two (simulating circulation to the right)
+
+    return string_RC
+
+
 def REV_SL(string_input, starting_position, length):
     """
         Summary and Description of Function:
