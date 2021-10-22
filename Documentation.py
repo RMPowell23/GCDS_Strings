@@ -1,24 +1,42 @@
 def LS_X(string_input, X):
     """
         Summary and Description of Function:
-    
-        This function shifts all of the characters of a string by "X" places to the left. 
+   
+        This function shifts all of the characters of a string by "X" places to the left.
         The leftmost characters are deleted in replacement of "X" hashtags ("#") to the right.
-        
-        Parameters: 
-        
+       
+        Parameters:
+       
         string_input (string): The string inserted by the user.
         X (int): The number of characters shifted in the string.
-        
+       
         Returns:
         string_LS (string): The manipulated string done by the LS_X function.
-        
+       
         Example:
         LS-4, ELECTRONICS (X = 4, string_input = ELECTRONICS): TRONICS####
     """
-    
-def RS_X(string_input, X): 
-    """
+   
+    ls_one = string_input[X: ]
+   
+    counter = 1
+   
+    hashtags_list = []
+    while counter <= X :
+       
+        hashtags_list.append('#')
+       
+        counter = counter + 1
+   
+    hashtags_string = ''.join(hashtags_list)
+   
+    string_output = ls_one + hashtags_string
+   
+    return string_output
+
+
+def RS_X(string_input, X):
+      """
         Summary and Description of Function:
     
         This function shifts all of the characters of a string by "X" places to the right. 
@@ -35,9 +53,26 @@ def RS_X(string_input, X):
         Example:
         RS-3, CHAIRS (X = 3, string_input = CHAIRS): ###CHA
     """
+
+    rs_one = string_input[ : -(X) ]
+   
+    counter = 1
+   
+    hashtags_list = []
+    while counter <= X :
+       
+        hashtags_list.append('#')
+       
+        counter = counter + 1
+   
+    hashtags_string = ''.join(hashtags_list)
+   
+    string_output = hashtags_string + rs_one
+   
+    return string_output
+    
     
 def LC_X(string_input, X):
-    
     """
         Summary and Description of Function:
 
@@ -63,12 +98,10 @@ def LC_X(string_input, X):
 
     string_LC = LC_two + LC_one # move LC_two in front of LC_one (simulating circulation to the left)
 
-
     return string_LC
 
 
 def RC_X(string_input, X):
-    
     """
         Summary and Description of Function:
 
@@ -177,7 +210,6 @@ def MC_SLXD(string_input, starting_position, length, X, direction):
 
         MC_MIDDLE_manipulated = MC_MIDDLE_two + MC_MIDDLE_one   # move LC_two in front of LC_one (simulating circulation to the left)
    
-   
     MC_begin = string_input[ : starting_position - 1]
    
     MC_end = string_input[(starting_position - 1) + length : ]
@@ -185,6 +217,7 @@ def MC_SLXD(string_input, starting_position, length, X, direction):
     string_output = MC_begin + MC_MIDDLE_manipulated + MC_end
    
     return string_output 
+
 
 
 def main():                                                                                                                                     # Define the main (the main menu)
